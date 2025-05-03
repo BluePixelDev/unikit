@@ -6,7 +6,7 @@ namespace BP.Utilkit
     /// A utility class for drawing gizmos in the editor.
     /// Provides methods to draw 3D shapes such as cylinders and circles.
     /// </summary>
-    public static class GizmoUtil
+    public static class GizmosUtil
     {
         // Number of vertices used to approximate a circle
         const int GizmoCircleVertCount = 12;
@@ -63,27 +63,6 @@ namespace BP.Utilkit
 
                 Gizmos.DrawLine(prevPosition, currentPosition);
                 prevPosition = currentPosition;
-            }
-        }
-
-        /// <summary>
-        /// Draws a polyline using gizmos API.
-        /// </summary>
-        /// <param name="points">Points to draw a polyline from</param>
-        public static void DrawPolyLine(params Vector3[] points)
-        {
-            if (points.Length < 2)
-            {
-                Debug.LogError("Insuficient amount of points, need at least 2.");
-                return;
-            }
-
-            Vector3 prevPos = points[0];
-            for (int i = 1; i < points.Length; i++)
-            {
-                Vector3 currentPos = points[i];
-                Gizmos.DrawLine(prevPos, currentPos);
-                prevPos = currentPos;
             }
         }
     }
