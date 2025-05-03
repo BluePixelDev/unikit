@@ -17,12 +17,12 @@
 
 ### Method 1: Unity Package Manager (UPM)
 
-To use `BP.Utilkit`, add the following to your `Packages/manifest.json`:
+To use `Utilkit`, add the following to your `Packages/manifest.json`:
 
 ```json
 {
   "dependencies": {
-    "com.yourname.bputilkit": "https://github.com/yourusername/BP.Utilkit.git"
+    "com.bluepixel.utilkit": "https://github.com/bluepixeldev/utilkit.git"
   }
 }
 ````
