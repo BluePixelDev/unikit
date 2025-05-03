@@ -1,0 +1,10 @@
+{
+  "description": "Your utility toolkit",
+  "displayName": "UtilKit",
+  "name": "com.bluepixel.utilkit",
+  "unity": "6000.0",
+  "version": "1.0.0",
+  "dependencies": {
+    "com.bluepixel.utilkit": "file:"
+  }
+}
