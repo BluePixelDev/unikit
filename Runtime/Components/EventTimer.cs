@@ -1,15 +1,11 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace BP.Utilkit
+namespace BP.UniKit
 {
-    [AddComponentMenu("Utilkit/Event Timer")]
+    [AddComponentMenu("UniKit/Event Timer")]
     public class EventTimer : MonoBehaviour
     {
-        [Tooltip("This field is just for easier organization")]
-        [SerializeField] private string timerName;
-        
-        [Space]
         [SerializeField] private float duration;
         [SerializeField] private bool startOnEnable = true;
         [SerializeField] private bool useUnscaledTime;

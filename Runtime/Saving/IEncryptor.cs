@@ -1,4 +1,4 @@
-namespace BP.Utilkit
+namespace BP.UniKit
 {
     /// <summary>
     /// Defines methods for encrypting and decrypting data.

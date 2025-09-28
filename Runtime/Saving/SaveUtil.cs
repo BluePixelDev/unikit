@@ -1,14 +1,10 @@
-using Newtonsoft.Json;
 using System;
 using System.IO;
 using System.Text;
 using UnityEngine;
 
-namespace BP.Utilkit
+namespace BP.UniKit
 {
-    /// <summary>
-    /// Utility class for Soulbound.Saving and loading JSON data, with optional encryption support.
-    /// </summary>
     public class SaveUtil : MonoBehaviour
     {
         /// <summary>
@@ -31,6 +27,34 @@ namespace BP.Utilkit
         }
 
         /// <summary>
+        /// Deletes the specified directory and its contents if it exists.
+        /// </summary>
+        /// <param name="path">The directory path to delete.</param>
+        /// <param name="recursive">
+        /// If set to <c>true</c>, deletes all subdirectories and files in the directory; otherwise, only deletes the directory if it is empty.
+        /// </param>
+        /// <returns>
+        /// <c>true</c> if the directory was found and deleted; otherwise, <c>false</c>.
+        /// </returns>
+        public static bool DeleteDir(string path, bool recursive = true)
+        {
+            try
+            {
+                if (Directory.Exists(path))
+                {
+                    Directory.Delete(path, recursive);
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Error deleting directory {path}: {e.Message}");
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Serializes the provided data to JSON, encrypts it using the specified encryption method,
         /// and writes the encrypted bytes to a file.
         /// </summary>
@@ -41,7 +65,7 @@ namespace BP.Utilkit
         {
             try
             {
-                string jsonData = JsonConvert.SerializeObject(data);
+                string jsonData = JsonUtility.ToJson(data);
                 byte[] dataBytes = Encoding.UTF8.GetBytes(jsonData);
                 byte[] encryptedData = encryption.Encrypt(dataBytes);
                 File.WriteAllBytes(path, encryptedData);
@@ -61,7 +85,7 @@ namespace BP.Utilkit
         {
             try
             {
-                string jsonData = JsonConvert.SerializeObject(data, Formatting.Indented);
+                string jsonData = JsonUtility.ToJson(data);
                 File.WriteAllText(path, jsonData);
             }
             catch (Exception e)
@@ -90,7 +114,7 @@ namespace BP.Utilkit
                     byte[] encryptedData = File.ReadAllBytes(path);
                     byte[] decryptedBytes = encryption.Decrypt(encryptedData);
                     string decryptedJson = Encoding.UTF8.GetString(decryptedBytes);
-                    return JsonConvert.DeserializeObject<T>(decryptedJson);
+                    return JsonUtility.FromJson<T>(decryptedJson);
                 }
                 else
                 {
@@ -121,7 +145,7 @@ namespace BP.Utilkit
                 if (File.Exists(path))
                 {
                     string jsonData = File.ReadAllText(path);
-                    return JsonConvert.DeserializeObject<T>(jsonData);
+                    return JsonUtility.FromJson<T>(jsonData);
                 }
                 else
                 {
@@ -157,34 +181,6 @@ namespace BP.Utilkit
             catch (Exception e)
             {
                 Debug.LogError($"Error deleting file {path}: {e.Message}");
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Deletes the specified directory and its contents if it exists.
-        /// </summary>
-        /// <param name="path">The directory path to delete.</param>
-        /// <param name="recursive">
-        /// If set to <c>true</c>, deletes all subdirectories and files in the directory; otherwise, only deletes the directory if it is empty.
-        /// </param>
-        /// <returns>
-        /// <c>true</c> if the directory was found and deleted; otherwise, <c>false</c>.
-        /// </returns>
-        public static bool DeleteDir(string path, bool recursive = true)
-        {
-            try
-            {
-                if (Directory.Exists(path))
-                {
-                    Directory.Delete(path, recursive);
-                    return true;
-                }
-                return false;
-            }
-            catch (Exception e)
-            {
-                Debug.LogError($"Error deleting directory {path}: {e.Message}");
                 return false;
             }
         }

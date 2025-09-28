@@ -1,10 +1,12 @@
 {
-  "description": "Your utility toolkit",
-  "displayName": "UtilKit",
+  "displayName": "UniKit",
+  "description": "A collection of usefull utility functions, classes and components.",
   "name": "com.bluepixel.utilkit",
   "unity": "6000.0",
-  "version": "1.0.0",
-  "dependencies": {
-    "com.bluepixel.utilkit": "file:"
+  "version": "0.5.0",
+  "author": {
+    "name": "Bluepixel",
+    "email": "bluepixeldev@gmail.com",
+    "url": "https://bluepixeldev.com"
   }
 }

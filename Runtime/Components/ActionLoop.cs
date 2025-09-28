@@ -3,9 +3,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace BP.Utilkit
+namespace BP.UniKit
 {
-    [AddComponentMenu("Utilkit/Action Loop")]
+    [AddComponentMenu("UniKit/Action Loop")]
     public class ActionLoop : MonoBehaviour
     {
         [SerializeField] private float interval = 1f;
