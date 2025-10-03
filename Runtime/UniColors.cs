@@ -2,11 +2,11 @@ using UnityEngine;
 
 namespace BP.UniKit
 {
-    public static class WebColor
+    public static class UniColors
     {
         private static Color ConvertHtmlString(string htmlString)
         {
-            if (ColorUtility.TryParseHtmlString(htmlString, out Color color)) return color;
+            if (UnityEngine.ColorUtility.TryParseHtmlString(htmlString, out Color color)) return color;
             return Color.magenta;
         }
 

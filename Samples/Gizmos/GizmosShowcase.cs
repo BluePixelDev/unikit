@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace BP.UniKit
 {
-    public class GizmosShowcase : MonoBehaviour
+    internal class GizmosShowcase : MonoBehaviour
     {
         private enum ShowcaseMode
         {

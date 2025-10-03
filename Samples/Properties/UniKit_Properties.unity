@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &749201504
+--- !u!1 &679163626
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,96 +127,56 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 749201506}
-  - component: {fileID: 749201505}
+  - component: {fileID: 679163628}
+  - component: {fileID: 679163627}
   m_Layer: 0
-  m_Name: Action Loop
+  m_Name: ==== INSPECT ME ====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &749201505
+--- !u!114 &679163627
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 749201504}
+  m_GameObject: {fileID: 679163626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 571bbebc33ed3cf49871ce183b2a3bc2, type: 3}
+  m_Script: {fileID: 11500000, guid: b0300274bb3e6794fbca79f5c0364a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 1
-  maxCycles: 10
-  infinite: 0
-  looped:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!4 &749201506
+  maskLayer:
+    layerIndex: 0
+  objectTag:
+    tag: 
+  saveVector2:
+    x: 0
+    y: 0
+  saveVector3:
+    x: 0
+    y: 0
+    z: 0
+  saveColor:
+    r: 250
+    g: 0
+    b: 0
+    a: 255
+  noLabel: I have no label!
+  readOnly: You can only read
+  combined: You can only read
+--- !u!4 &679163628
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 749201504}
+  m_GameObject: {fileID: 679163626}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.7606997, y: 1.001221, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &974698617
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 974698619}
-  - component: {fileID: 974698618}
-  m_Layer: 0
-  m_Name: Event Timer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &974698618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 974698617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c841efa6de6fee48ae3e5812793e63c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 0
-  startOnEnable: 1
-  useUnscaledTime: 0
-  Started:
-    m_PersistentCalls:
-      m_Calls: []
-  Finished:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!4 &974698619
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 974698617}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.7606997, y: 1.001221, z: 0}
+  m_LocalPosition: {x: 5.498515, y: -5.759672, z: 25.600111}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -364,5 +324,4 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1493438757}
-  - {fileID: 749201506}
-  - {fileID: 974698619}
+  - {fileID: 679163628}

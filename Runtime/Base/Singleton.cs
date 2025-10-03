@@ -19,9 +19,9 @@ namespace BP.UniKit
                 Destroy(this);
             }
 
-            OnAwake();
+            Awaken();
         }
 
-        protected virtual void OnAwake() { }
+        protected virtual void Awaken() { }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace BP.UniKit
 {
-    public class SaveUtil : MonoBehaviour
+    public class UniSave : MonoBehaviour
     {
         /// <summary>
         /// Creates one or more directories if they do not already exist.
